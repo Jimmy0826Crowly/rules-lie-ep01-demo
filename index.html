@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>规则在说谎｜第01集 开门者活</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="app-shell" aria-label="规则在说谎第一集互动原型">
+      <header class="topbar">
+        <div class="brand">
+          <span class="brand-mark" aria-hidden="true"></span>
+          <div>
+            <p class="series">规则在说谎</p>
+            <h1>第01集 开门者活</h1>
+          </div>
+        </div>
+        <div class="top-actions">
+          <button class="icon-button" id="restartBtn" type="button" title="从头开始">↺</button>
+          <button class="icon-button" id="muteBtn" type="button" title="音效氛围">♪</button>
+          <button class="icon-button" id="focusBtn" type="button" title="专注模式">□</button>
+        </div>
+      </header>
+
+      <section class="play-layout">
+        <section class="stage-column" aria-label="故事画面">
+          <div class="stage-toolbar">
+            <div>
+              <span id="sceneTime">0-4s</span>
+              <strong id="sceneTitle">红字砸城</strong>
+            </div>
+            <span id="sceneCounter">01 / 36</span>
+          </div>
+
+          <article class="story-stage" id="storyStage" tabindex="0">
+            <img id="sceneImage" class="scene-image" alt="" />
+            <div class="scene-grade" aria-hidden="true"></div>
+            <div class="fog fog-a" aria-hidden="true"></div>
+            <div class="fog fog-b" aria-hidden="true"></div>
+            <div class="rule-text" id="ruleText" aria-hidden="true"></div>
+            <div class="character-layer" id="characterLayer" aria-hidden="true"></div>
+            <div class="prop-layer" id="propLayer" aria-hidden="true"></div>
+            <div class="stage-caption" id="stageCaption"></div>
+          </article>
+
+          <section class="dialogue-panel" aria-live="polite">
+            <div class="speaker-row">
+              <span class="speaker" id="speakerName">广播</span>
+              <span class="tone" id="speakerTone">失真平稳</span>
+            </div>
+            <p class="dialogue-line" id="dialogueLine">日落后，紧闭门窗。</p>
+            <p class="subtext" id="subtext">世界换了主人，而且它怕你知道「第二行」的存在。</p>
+            <div class="choices" id="choices"></div>
+            <div class="controls">
+              <button id="prevBtn" type="button">回看</button>
+              <button id="autoBtn" type="button">自动</button>
+              <button id="nextBtn" class="primary" type="button">继续</button>
+            </div>
+          </section>
+        </section>
+
+        <aside class="side-panel" aria-label="分镜与线索">
+          <section class="status-card">
+            <p class="panel-label">当前状态</p>
+            <div class="status-grid">
+              <div>
+                <span>规则压迫</span>
+                <strong id="dangerLevel">12%</strong>
+              </div>
+              <div>
+                <span>朱冠宇</span>
+                <strong id="heroState">警觉</strong>
+              </div>
+            </div>
+          </section>
+
+          <section class="timeline-card">
+            <div class="panel-heading">
+              <p class="panel-label">分镜进度</p>
+              <span id="partLabel">Part A</span>
+            </div>
+            <div class="timeline" id="timeline"></div>
+          </section>
+
+          <section class="clue-card">
+            <div class="panel-heading">
+              <p class="panel-label">线索</p>
+              <span id="clueCount">0 / 6</span>
+            </div>
+            <div class="clues" id="clues"></div>
+          </section>
+
+          <section class="log-card">
+            <p class="panel-label">回响</p>
+            <div id="choiceLog" class="choice-log">关键选择会记录在这里。</div>
+          </section>
+        </aside>
+      </section>
+    </main>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
